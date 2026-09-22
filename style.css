@@ -1,0 +1,336 @@
+/* ---------------------------------
+   Variables de color gg
+--------------------------------- */
+:root {
+  --fondo: #faf6ec;
+  --crema: #f3ecd9;
+  --amarillo: #f6c945;
+  --amarillo-claro: #ffdd6b;
+  --cafe: #6b4423;
+  --cafe-oscuro: #4a2f18;
+  --verde: #6b8f4e;
+  --verde-oscuro: #4f6b39;
+  --texto: #4a3f2f;
+  --boton: #a67c2e;
+  --boton-hover: #8f6524;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  min-height: 100vh;
+  background: var(--fondo);
+  font-family: 'Trebuchet MS', 'Segoe UI', sans-serif;
+  color: var(--texto);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow-x: hidden;
+}
+
+.escena {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px 20px 60px;
+  text-align: center;
+  position: relative;
+}
+
+.titulo {
+  font-size: 1.6rem;
+  font-weight: normal;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+  color: var(--cafe);
+  opacity: 0;
+  animation: aparecerTitulo 1.2s ease forwards;
+  animation-delay: 0.2s;
+}
+
+@keyframes aparecerTitulo {
+  from { opacity: 0; transform: translateY(-8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ---------------------------------
+   Contenedor del ramo pro
+--------------------------------- */
+.ramo {
+  position: relative;
+  width: 320px;
+  height: 380px;
+  margin-top: 10px;
+  opacity: 0;
+  transform: translateY(25px) scale(0.96);
+  animation: aparecerRamo 1.4s ease forwards;
+  animation-delay: 0.4s;
+}
+
+@keyframes aparecerRamo {
+  to {
+    opacity: 1;
+    transform: translateY(0) scale(1);
+  }
+}
+
+/* Envoltura simple debajo del ramo :3 */
+.envoltura {
+  position: absolute;
+  bottom: 20px;
+  left: 50%;
+  width: 150px;
+  height: 110px;
+  background: var(--crema);
+  border: 2px solid #e4d8b8;
+  clip-path: polygon(50% 0%, 100% 100%, 0% 100%);
+  transform: translateX(-50%);
+  z-index: 1;
+}
+
+/* ---------------------------------
+   Tallos 
+--------------------------------- */
+.tallo {
+  position: absolute;
+  bottom: 55px;
+  left: 50%;
+  width: 5px;
+  background: var(--verde-oscuro);
+  border-radius: 3px;
+  transform-origin: bottom center;
+  z-index: 2;
+}
+
+.tallo1 { height: 150px; transform: translateX(-50%) rotate(-4deg); }
+.tallo2 { height: 165px; transform: translateX(-50%) rotate(6deg); }
+.tallo3 { height: 175px; transform: translateX(-50%) rotate(-14deg); }
+.tallo4 { height: 175px; transform: translateX(-50%) rotate(16deg); }
+.tallo5 { height: 190px; transform: translateX(-50%) rotate(1deg); }
+
+/* ---------------------------------
+   ojas
+--------------------------------- */
+.hoja {
+  position: absolute;
+  bottom: 100px;
+  left: 50%;
+  width: 34px;
+  height: 16px;
+  background: var(--verde);
+  border-radius: 0 100% 0 100%;
+  z-index: 2;
+}
+
+.hoja1 { transform: translate(-70px, 0) rotate(30deg); }
+.hoja2 { transform: translate(40px, 10px) rotate(-25deg); }
+.hoja3 { transform: translate(-10px, 40px) rotate(65deg); }
+
+/* ---------------------------------
+   Flores
+--------------------------------- */
+.flor {
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  width: 70px;
+  height: 70px;
+  z-index: 3;
+  animation: balanceo 5s ease-in-out infinite;
+  transform-origin: bottom center;
+}
+
+.flor1 { bottom: 195px; transform: translateX(-125px) rotate(-6deg); width: 62px; height: 62px; animation-delay: 0.2s; }
+.flor2 { bottom: 210px; transform: translateX(-45px) rotate(4deg); width: 72px; height: 72px; animation-delay: 0.6s; }
+.flor3 { bottom: 230px; transform: translateX(20px) rotate(-3deg) scale(1.05); width: 80px; height: 80px; animation-delay: 0s; }
+.flor4 { bottom: 205px; transform: translateX(85px) rotate(10deg); width: 66px; height: 66px; animation-delay: 0.8s; }
+.flor5 { bottom: 165px; transform: translateX(-5px) rotate(2deg); width: 58px; height: 58px; animation-delay: 0.4s; }
+
+@keyframes balanceo {
+  0%, 100% { rotate: 0deg; }
+  50% { rotate: 2deg; }
+}
+
+.petalos {
+  position: absolute;
+  width: 100%;
+  height: 100%;
+}
+
+.petalos span {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 40%;
+  height: 18%;
+  background: linear-gradient(90deg, var(--amarillo-claro), var(--amarillo));
+  border-radius: 50% 50% 50% 50%;
+  transform-origin: left center;
+  animation: moverPetalo 4s ease-in-out infinite;
+}
+
+.petalos span:nth-child(1) { transform: rotate(0deg); }
+.petalos span:nth-child(2) { transform: rotate(45deg); }
+.petalos span:nth-child(3) { transform: rotate(90deg); }
+.petalos span:nth-child(4) { transform: rotate(135deg); }
+.petalos span:nth-child(5) { transform: rotate(180deg); }
+.petalos span:nth-child(6) { transform: rotate(225deg); }
+.petalos span:nth-child(7) { transform: rotate(270deg); }
+.petalos span:nth-child(8) { transform: rotate(315deg); }
+
+.petalos span:nth-child(odd) { animation-delay: 0.3s; }
+
+@keyframes moverPetalo {
+  0%, 100% { filter: brightness(1); }
+  50% { filter: brightness(1.06); }
+}
+
+.centro {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  width: 34%;
+  height: 34%;
+  background: radial-gradient(circle at 35% 35%, var(--cafe), var(--cafe-oscuro));
+  border-radius: 50%;
+  transform: translate(-50%, -50%);
+  box-shadow: inset 0 0 4px rgba(0,0,0,0.3);
+}
+
+/* ---------------------------------
+   Botones alvvv
+--------------------------------- */
+.boton {
+  margin-top: 26px;
+  padding: 12px 26px;
+  font-size: 1rem;
+  border: none;
+  border-radius: 30px;
+  background: var(--boton);
+  color: #fffaf0;
+  cursor: pointer;
+  letter-spacing: 0.5px;
+  transition: transform 0.2s ease, background 0.2s ease;
+  opacity: 0;
+  animation: aparecerTitulo 1s ease forwards;
+  animation-delay: 1s;
+}
+
+.boton:hover {
+  background: var(--boton-hover);
+  transform: translateY(-2px);
+}
+
+.boton:active {
+  transform: translateY(0);
+}
+
+.boton-musica {
+  margin-top: 14px;
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 1px solid #e4d8b8;
+  background: var(--crema);
+  font-size: 1.1rem;
+  cursor: pointer;
+  transition: transform 0.2s ease, background 0.2s ease;
+  opacity: 0;
+  animation: aparecerTitulo 1s ease forwards;
+  animation-delay: 1.2s;
+}
+
+.boton-musica:hover {
+  transform: scale(1.08);
+  background: #ecdfb9;
+}
+
+/* ---------------------------------
+   foto
+--------------------------------- */
+.overlay {
+  position: fixed;
+  inset: 0;
+  background: rgba(30, 22, 10, 0);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  pointer-events: none;
+  transition: background 0.4s ease;
+  z-index: 10;
+  padding: 20px;
+}
+
+.overlay.visible {
+  background: rgba(30, 22, 10, 0.55);
+  pointer-events: auto;
+}
+
+.tarjeta-foto {
+  background: var(--crema);
+  padding: 14px 14px 18px;
+  border-radius: 10px;
+  box-shadow: 0 10px 30px rgba(0,0,0,0.25);
+  max-width: 90vw;
+  max-height: 85vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  opacity: 0;
+  transform: scale(0.9) translateY(10px);
+  transition: opacity 0.4s ease, transform 0.4s ease;
+}
+
+.overlay.visible .tarjeta-foto {
+  opacity: 1;
+  transform: scale(1) translateY(0);
+}
+
+.tarjeta-foto img {
+  max-width: 100%;
+  max-height: 65vh;
+  border-radius: 6px;
+  display: block;
+  object-fit: contain;
+}
+
+.boton-cerrar {
+  margin-top: 12px;
+  padding: 8px 20px;
+  border: none;
+  border-radius: 20px;
+  background: var(--boton);
+  color: #fffaf0;
+  cursor: pointer;
+  transition: background 0.2s ease;
+}
+
+.boton-cerrar:hover {
+  background: var(--boton-hover);
+}
+
+/* ---------------------------------
+    Responsibe
+--------------------------------- */
+@media (max-width: 480px) {
+  .ramo {
+    width: 240px;
+    height: 300px;
+    transform-origin: bottom center;
+    transform: translateY(25px) scale(0.8);
+  }
+
+  @keyframes aparecerRamo {
+    to {
+      opacity: 1;
+      transform: translateY(0) scale(0.85);
+    }
+  }
+
+  .titulo {
+    font-size: 1.3rem;
+  }
+}

@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Un ramo para ti 🌻</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+  <main class="escena">
+
+    <h1 class="titulo">Para ti</h1>
+
+    <div class="ramo" id="ramo">
+
+      <!-- Envoltura -->
+      <div class="envoltura"></div>
+
+      <!-- Tallos -->
+      <div class="tallo tallo1"></div>
+      <div class="tallo tallo2"></div>
+      <div class="tallo tallo3"></div>
+      <div class="tallo tallo4"></div>
+      <div class="tallo tallo5"></div>
+
+      <!-- Hojas -->
+      <div class="hoja hoja1"></div>
+      <div class="hoja hoja2"></div>
+      <div class="hoja hoja3"></div>
+
+      <!-- Flores -->
+      <div class="flor flor1">
+        <div class="petalos">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="centro"></div>
+      </div>
+
+      <div class="flor flor2">
+        <div class="petalos">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="centro"></div>
+      </div>
+
+      <div class="flor flor3">
+        <div class="petalos">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="centro"></div>
+      </div>
+
+      <div class="flor flor4">
+        <div class="petalos">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="centro"></div>
+      </div>
+
+      <div class="flor flor5">
+        <div class="petalos">
+          <span></span><span></span><span></span><span></span>
+          <span></span><span></span><span></span><span></span>
+        </div>
+        <div class="centro"></div>
+      </div>
+
+    </div>
+
+    <button id="btnSorpresa" class="boton">Toca aquí 🌻</button>
+
+    <button id="btnMusica" class="boton-musica" title="Pausar/Reproducir música">🔈</button>
+
+  </main>
+
+  <!-- Overlay con la foto -->
+  <div class="overlay" id="overlay">
+    <div class="tarjeta-foto">
+      <img src="img/foto.jpg" alt="Sorpresa" id="foto">
+      <button id="btnCerrar" class="boton-cerrar">Cerrar</button>
+    </div>
+  </div>
+
+  <audio id="musica" src="audio/musica.mp3" loop></audio>
+
+  <script src="script.js"></script>
+</body>
+</html>
